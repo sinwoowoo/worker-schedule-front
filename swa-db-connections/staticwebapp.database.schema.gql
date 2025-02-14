@@ -16,7 +16,19 @@ type schedule @model {
 
 """
 
-type schedule @model {
-  id: ID
-  data: String
+// graphql/schema.gql
+type Worker {
+    workerId: String
+    name: String
+    shift: String
+}
+
+type Schedule {
+    id: String
+    date: String
+    workers: [Worker]
+}
+
+type Query {
+    workers: [Schedule]
 }
