@@ -1,0 +1,17 @@
+
+"""
+Add your CosmosDB NoSQL database schema in this file
+
+For example:
+
+type schedule @model {
+  id: ID
+  data: String,
+  workers: [
+    workderId:String,
+    name:String,
+    shift:String
+  ]
+}
+
+"""
