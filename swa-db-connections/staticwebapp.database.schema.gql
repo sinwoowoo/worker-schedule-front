@@ -10,7 +10,7 @@ type schedule @model {
   workers: [
     workderId:String,
     name:String,
-    shift
+    shift:String
   ]
 }
 
@@ -27,8 +27,4 @@ type Schedule {
     id: String
     date: String
     workers: [Worker]
-}
-
-type Query {
-    workers: [Schedule]
 }
