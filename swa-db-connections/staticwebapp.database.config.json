@@ -41,6 +41,11 @@
         }
       ]
     }
-  }
-
+  },
+ "routes": [
+    {
+      "route": "/data-api/*",
+      "methods": ["GET", "POST"]
+    }
+  ]
 }
