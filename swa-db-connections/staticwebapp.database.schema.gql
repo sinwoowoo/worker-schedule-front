@@ -10,8 +10,18 @@ type schedule @model {
   workers: [
     workderId:String,
     name:String,
-    shift:String
+    shift
   ]
 }
 
 """
+
+type schedule @model {
+  id: ID
+  data: String,
+  workers: [
+    workderId:String,
+    name:String,
+    shift:String
+  ]
+}
