@@ -14,7 +14,7 @@ async function list() {
 
 const query = `
     {
-      schedule {
+      worker-schedule-db {
         items {
           id
           data
@@ -29,6 +29,6 @@ const response = await fetch(endpoint, {
     body: JSON.stringify({ query: query })
 });
 const result = await response.json();
-console.table(result.data.schedule.items);
+console.table(result.data.worker-schedule-db.items);
 }
 </script>
