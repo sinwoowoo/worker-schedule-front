@@ -11,24 +11,41 @@
 </div>
 <script>
 async function list() {
-
-const query = `
-    {
-      schedule {
-        items {
-          id
-          data
+    const query = `
+    query {
+        workers {
+            items {
+                id
+                date
+                workers {
+                    workerId
+                    name
+                    shift
+                }
+            }
         }
-      }
     }`;
     
-const endpoint = "/data-api/graphql";
-const response = await fetch(endpoint, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query: query })
-});
-const result = await response.json();
-console.table(result.data.schedule.items);
+    const endpoint = "/data-api/graphql";
+    try {
+        const response = await fetch(endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ query: query })
+        });
+        
+        const result = await response.json();
+        
+        // 에러 체크
+        if (result.errors) {
+            console.error('GraphQL Errors:', result.errors);
+            return;
+        }
+        
+        // 결과 출력
+        console.table(result.data.workers.items);
+    } catch (error) {
+        console.error('Error:', error);
+    }
 }
 </script>
