@@ -11,8 +11,7 @@
 </div>
 <script>
 async function list() {
-    const query = `
-    query {
+    const query = `{
         workers {
             items {
                 id
@@ -23,7 +22,7 @@ async function list() {
                     shift
                 }
             }
-        }
+       }
     }`;
     
     const endpoint = "/data-api/graphql";
