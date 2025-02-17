@@ -35,5 +35,12 @@
         }
       ]
     }
-  }
+  },
+  "routes": [
+    {
+      "route": "/data-api/*",
+      "methods": ["GET", "POST"],
+      "allowedRoles": ["anonymous", "authenticated"]
+    }
+  ]
 }
