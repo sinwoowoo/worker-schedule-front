@@ -10,6 +10,7 @@
     <button id="delete" onclick="del()">Delete</button>
 </div>
 <script>
+const endpoint = process.env.NODE_ENV === 'development' ? "http://localhost:4280/data-api/graphql" : "/data-api/graphql";
 async function list() {
 
   const query = `
