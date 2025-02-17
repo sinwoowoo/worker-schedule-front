@@ -3,7 +3,8 @@
   "data-source": {
     "database-type": "cosmosdb_nosql",
     "options": {
-      "database": "MyTestPersonDatabase",
+      "database": "MyTestPersonContainer",
+      "container": "MyTestPersonContainer1",
       "schema": "staticwebapp.database.schema.gql"
     },
     "connection-string": "AccountEndpoint=https://82022737.documents.azure.com:443/;AccountKey=ZkHkcu4VJNcPGFeMezukQdnJpunQsC51kjj6iX0HLHNsYMIuUSnCjaJYuYw2wHJ9s40Lb32h25ajACDbMgy56w==;"
